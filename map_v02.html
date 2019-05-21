@@ -102,6 +102,11 @@ map.addLayer({
 }
 });
 
+var popup = new mapboxgl.Popup({closeOnClick: false})
+.setLngLat([139.77681577205658, 35.6192968937497])
+.setHTML('<h1>Miraikan</h1>')
+.addTo(map);
+
 // 東京国際交流館プラザ平成
 map.addLayer({
 "id": "points2",
