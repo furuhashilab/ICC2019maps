@@ -85,98 +85,6 @@ return true;
 
 map.on('load', function () {
 
-//map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
-map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 1 });
-
-map.addLayer({
-"id": "points1",
-"type": "symbol",
-"source": {
-"type": "geojson",
-"data": {
-"type": "FeatureCollection",
-"features": [{
-"type": "Feature",
-"geometry": {
-"type": "Point",
-"coordinates": [139.77681577205658, 35.6192968937497] // 日本科学未来館 139.77681577205658, 35.6192968937497
-}
-}]
-}
-},
-"layout": {
-"icon-image": "pulsing-dot"
-}
-});
-
-// 東京国際交流館プラザ平成
-map.addLayer({
-"id": "points2",
-"type": "symbol",
-"source": {
-"type": "geojson",
-"data": {
-"type": "FeatureCollection",
-"features": [{
-"type": "Feature",
-"geometry": {
-"type": "Point",
-"coordinates": [139.77612912654877, 35.6208057026184] // 東京国際交流館プラザ平成 139.77612912654877, 35.6208057026184
-}
-}]
-}
-},
-"layout": {
-"icon-image": "pulsing-dot"
-}
-});
-
-// 東京都産業技術研究センター
-map.addLayer({
-"id": "points3",
-"type": "symbol",
-"source": {
-"type": "geojson",
-"data": {
-"type": "FeatureCollection",
-"features": [{
-"type": "Feature",
-"geometry": {
-"type": "Point",
-"coordinates": [139.77962136268613, 35.61873871446924] // 東京都産業技術研究センター  139.77962136268613, 35.61873871446924
-}
-}]
-}
-},
-"layout": {
-"icon-image": "pulsing-dot"
-}
-});
-
-// 東京ビッグサイト
-map.addLayer({
-"id": "points4",
-"type": "symbol",
-"source": {
-"type": "geojson",
-"data": {
-"type": "FeatureCollection",
-"features": [{
-"type": "Feature",
-"geometry": {
-"type": "Point",
-"coordinates": [139.7940409183502, 35.62984923763709] // ビックサイト 139.7940409183502, 35.62984923763709
-}
-}]
-}
-},
-"layout": {
-"icon-image": "pulsing-dot"
-}
-});
-
-
-
 // Add a layer showing the places.
 map.addLayer({
 "id": "places",
@@ -317,6 +225,99 @@ map.on('mouseleave', 'places', function () {
 map.getCanvas().style.cursor = '';
 });
 });
+
+//map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
+map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 1 });
+
+map.addLayer({
+"id": "points1",
+"type": "symbol",
+"source": {
+"type": "geojson",
+"data": {
+"type": "FeatureCollection",
+"features": [{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [139.77681577205658, 35.6192968937497] // 日本科学未来館 139.77681577205658, 35.6192968937497
+}
+}]
+}
+},
+"layout": {
+"icon-image": "pulsing-dot"
+}
+});
+
+// 東京国際交流館プラザ平成
+map.addLayer({
+"id": "points2",
+"type": "symbol",
+"source": {
+"type": "geojson",
+"data": {
+"type": "FeatureCollection",
+"features": [{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [139.77612912654877, 35.6208057026184] // 東京国際交流館プラザ平成 139.77612912654877, 35.6208057026184
+}
+}]
+}
+},
+"layout": {
+"icon-image": "pulsing-dot"
+}
+});
+
+// 東京都産業技術研究センター
+map.addLayer({
+"id": "points3",
+"type": "symbol",
+"source": {
+"type": "geojson",
+"data": {
+"type": "FeatureCollection",
+"features": [{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [139.77962136268613, 35.61873871446924] // 東京都産業技術研究センター  139.77962136268613, 35.61873871446924
+}
+}]
+}
+},
+"layout": {
+"icon-image": "pulsing-dot"
+}
+});
+
+// 東京ビッグサイト
+map.addLayer({
+"id": "points4",
+"type": "symbol",
+"source": {
+"type": "geojson",
+"data": {
+"type": "FeatureCollection",
+"features": [{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [139.7940409183502, 35.62984923763709] // ビックサイト 139.7940409183502, 35.62984923763709
+}
+}]
+}
+},
+"layout": {
+"icon-image": "pulsing-dot"
+}
+});
+
+
+
 </script>
 
 </body>
