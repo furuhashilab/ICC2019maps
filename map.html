@@ -21,7 +21,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibWFwY29uY2llcmdlMDIiLCJhIjoiY2luendwdDdwMTlrd
  
 var map = new mapboxgl.Map({
 container: 'map',
-zoom: 13,
+zoom: 15,
 center: [139.77853775024414, 35.624965681351924],
 style: 'mapbox://styles/mapbox/streets-v9'
 });
@@ -91,6 +91,29 @@ map.addLayer({
 "geometry": {
 "type": "Point",
 "coordinates": [139.77681577205658, 35.6192968937497] // 未来館 139.77681577205658, 35.6192968937497
+}
+}]
+}
+},
+"layout": {
+"icon-image": "pulsing-dot"
+}
+});
+});
+
+ 
+map.addLayer({
+"id": "points",
+"type": "symbol",
+"source": {
+"type": "geojson",
+"data": {
+"type": "FeatureCollection",
+"features": [{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [139.77612912654877, 35.6208057026184] // プラザ平成 139.77612912654877, 35.6208057026184
 }
 }]
 }
