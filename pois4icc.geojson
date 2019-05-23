@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "<h1>Miraikan</h1><img src=\"./asset/img/miraikan_wikipedia_w200.jpeg\" /><br><p>→ <a href=\"http://ge0.me/03g2ckeF99/Miraikan\" target=\"_blank\" title=\"Opens in a new window\">Navigation by maps.me</a><br><br> <strong>Date:</strong> July 15-20<br><strong>Place:</strong> National Museum of Emerging Science and Innovation (Miraikan), <strong>Symbol Zone</strong></p>",
+        "marker-size": "large",
+        "icon": "embassy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.77681577205658,
+          35.619480045477204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "<h1>Plaza Heisei</h1><img src=\"./asset/img/TIEC_wikipedia_w200.jpg\" /><p>→ <a href=\"http://ge0.me/43g2ckx0db/Plaza_Heisei\" target=\"_blank\" title=\"Opens in a new window\">Navigation by maps.me</a><br><br> <strong>Date:</strong> July 15-20<br><strong>Place:</strong> Tokyo International Exchange Center, <br><strong>Sessions</strong></p></p>",
+        "marker-size": "middle",
+        "icon": "embassy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.77612912654877,
+          35.6208057026184
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "<h1>TIRI</h1><img src=\"./asset/img/TIRI_wikipedia_w200.jpg\" /><p>→ <a href=\"http://ge0.me/03g2clCnWp/TIRI\" target=\"_blank\" title=\"Opens in a new window\">Navigation by maps.me</a><br><br> <strong>Date:</strong> July 15-20<br><strong>Place:</strong> Tokyo Metropolitan Industrial Technology Research Institute headquarters, <br><strong>Sessions</strong></p></p>",
+        "marker-size": "middle",
+        "icon": "embassy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.77962136268613,
+          35.61873871446924
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>ICC 2019 TOKYO maps</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet' />
+<style>
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+
+<style>
+.mapboxgl-popup {
+max-width: 400px;
+font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+</style>
+<div id='map'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoibWFwY29uY2llcmdlMDIiLCJhIjoiY2luendwdDdwMTlrd3VnbHlzcmFrbDFldiJ9.8T-zr4Q9B7MJwRtn4Skh8w';
+
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v9',
+zoom: 15,
+center: [139.77784037590027,35.61978529742429]
+});
+
+
+
+map.on('load', function () {
+
+// Add a ICC logo as icon
+map.loadImage("./asset/img/logo_icc_moji_w100.jpg", function (error, res) {
+  map.addImage("iccw100", res);
+});
+
+map.loadImage("./asset/img/logo_icc_moji_w50.jpg", function (error, res) {
+  map.addImage("iccw50", res);
+});
+
+// map.addSource("MapMarker",{
+//  type: "geojson",
+//  data: pointdata
+//});
+
+// Add a layer showing the places.
+map.addLayer({
+"id": "places",
+"type": "symbol",
+"source": {
+"type": "geojson",
+"data":
+// GeoJSON Start
+
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "<h1>Miraikan</h1><img src=\"./asset/img/miraikan_wikipedia_w200.jpeg\" /><br><p>→ <a href=\"http://ge0.me/03g2ckeF99/Miraikan\" target=\"_blank\" title=\"Opens in a new window\">Navigation by maps.me</a><br><br> <strong>Date:</strong> July 15-20<br><strong>Place:</strong> National Museum of Emerging Science and Innovation (Miraikan), <strong>Symbol Zone</strong></p>",
+        "marker-color": "#ff0000",
+        "marker-size": "large",
+        "icon": "embassy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.77681577205658,
+          35.619480045477204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "<h1>Plaza Heisei</h1><img src=\"./asset/img/TIEC_wikipedia_w200.jpg\" /><p>→ <a href=\"http://ge0.me/43g2ckx0db/Plaza_Heisei\" target=\"_blank\" title=\"Opens in a new window\">Navigation by maps.me</a><br><br> <strong>Date:</strong> July 15-20<br><strong>Place:</strong> Tokyo International Exchange Center, <br><strong>Sessions</strong></p></p>",
+        "marker-size": "medium",
+        "icon": "embassy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.77612912654877,
+          35.6208057026184
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "<h1>TIRI</h1><img src=\"./asset/img/TIRI_wikipedia_w200.jpg\" /><p>→ <a href=\"http://ge0.me/03g2clCnWp/TIRI\" target=\"_blank\" title=\"Opens in a new window\">Navigation by maps.me</a><br><br> <strong>Date:</strong> July 15-20<br><strong>Place:</strong> Tokyo Metropolitan Industrial Technology Research Institute headquarters, <br><strong>Sessions</strong></p></p>",
+        "marker-size": "medium",
+        "icon": "embassy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.77962136268613,
+          35.61873871446924
+        ]
+      }
+    }
+  ]
+}
+
+
+// GeoJSON End
+},
+"layout": {
+"icon-image": "{icon}-15",
+//"icon-image": "iccw100",
+//"icon-image": "iccw50",
+"icon-allow-overlap": true,
+"icon-size": 2
+},
+"paint": {
+    //"text-size": 12,
+    "icon-color" : "#ff0000"
+}
+});
+
+
+// When a click event occurs on a feature in the places layer, open a popup at the
+// location of the feature, with description HTML from its properties.
+map.on('click', 'places', function (e) {
+var coordinates = e.features[0].geometry.coordinates.slice();
+var description = e.features[0].properties.description;
+
+// Ensure that if the map is zoomed out such that multiple
+// copies of the feature are visible, the popup appears
+// over the copy being pointed to.
+while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+}
+
+new mapboxgl.Popup()
+.setLngLat(coordinates)
+.setHTML(description)
+.addTo(map);
+});
+
+// Change the cursor to a pointer when the mouse is over the places layer.
+map.on('mouseenter', 'places', function () {
+map.getCanvas().style.cursor = 'pointer';
+});
+
+// Change it back to a pointer when it leaves.
+map.on('mouseleave', 'places', function () {
+map.getCanvas().style.cursor = '';
+});
+});
+
+
+
+
+</script>
+
+</body>
+</html>
