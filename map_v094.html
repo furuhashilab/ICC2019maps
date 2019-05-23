@@ -25,11 +25,12 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibWFwY29uY2llcmdlMDIiLCJhIjoiY2luendwdDdwMTlrd
 
 var map = new mapboxgl.Map({
 container: 'map',
-style: 'mapbox://styles/mapbox/streets-v9',
-pitch: 45,
-bearing: -17.6,
-zoom: 15,
-center: [139.77784037590027,35.61978529742429]
+// style: 'mapbox://styles/mapbox/streets-v9',
+style: 'mapbox://styles/mapbox/light-v10',
+pitch: 85,
+bearing: -60,
+zoom: 14.5,
+center: [ 139.76913928985596, 35.623884282121246 ]
 });
 
 
@@ -180,15 +181,53 @@ map.getCanvas().style.cursor = '';
 
 
 //setTimeout('alert("Hello, world!")', 5000);
-setTimeout(function (j1){
-   map.jumpTo({ 'center': [139.75738048553464, 35.62625636451378], 'zoom': 14 });
-   //map.setPitch(30);
-}, 3000);
+//setTimeout(function (j1){
+//   map.jumpTo({ 'center': [139.75738048553464, 35.62625636451378], 'zoom': 14 });
+//   //map.setPitch(30);
+//}, 3000);
 
 });
 //
 
 
+map.on('load', function() {
+// Insert the layer beneath any symbol layer.
+var layers = map.getStyle().layers;
+
+var labelLayerId;
+for (var i = 0; i < layers.length; i++) {
+if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
+labelLayerId = layers[i].id;
+break;
+}
+}
+
+map.addLayer({
+'id': '3d-buildings',
+'source': 'composite',
+'source-layer': 'building',
+'filter': ['==', 'extrude', 'true'],
+'type': 'fill-extrusion',
+'minzoom': 14,
+'paint': {
+'fill-extrusion-color': '#aaa',
+
+// use an 'interpolate' expression to add a smooth transition effect to the
+// buildings as the user zooms in
+'fill-extrusion-height': [
+"interpolate", ["linear"], ["zoom"],
+14, 0,
+14.05, ["get", "height"]
+],
+'fill-extrusion-base': [
+"interpolate", ["linear"], ["zoom"],
+14, 0,
+14.05, ["get", "min_height"]
+],
+'fill-extrusion-opacity': .6
+}
+}, labelLayerId);
+});
 
 
 </script>
