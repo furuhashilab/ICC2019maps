@@ -29,7 +29,7 @@ container: 'map',
 style: 'mapbox://styles/mapbox/light-v10',
 pitch: 85,
 bearing: -60,
-zoom: 14.5,
+zoom: 14.8,
 center: [ 139.76913928985596, 35.623884282121246 ]
 });
 
@@ -54,7 +54,7 @@ map.addLayer({
 },
 "geometry": {
 "type": "Point",
-"coordinates": [139.77681577205658, 35.619480045477204]
+"coordinates": [139.77681, 35.61948]
 }
 }, {
   // 八芳園 139.729682,  35.637644
@@ -76,7 +76,7 @@ map.addLayer({
 },
 "geometry": {
 "type": "Point",
-"coordinates": [139.77962136268613, 35.61873871446924]
+"coordinates": [139.77962, 35.61873]
 }
 }]
 }
@@ -115,6 +115,7 @@ map.addLayer({
 }
 },
 "layout": {
+//"icon-image": "{icon}-15",
 "icon-image": "{icon}-15",
 "icon-allow-overlap": true,
 "icon-size": 3
@@ -230,7 +231,108 @@ map.addLayer({
 });
 
 
+
+map.on('load', function() {
+
+//map.loadImage('https://furuhashilab.github.io/ICC2019maps/asset/img/logo_icc_moji_offset_w200h400.png', function(error, image) {
+map.loadImage('https://furuhashilab.github.io/ICC2019maps/asset/img/logo_icc_moji_offset_w200h350.png', function(error, image) {
+//map.loadImage('https://furuhashilab.github.io/ICC2019maps/asset/img/logo_icc_moji.jpg', function(error, image) {
+//map.loadImage('https://furuhashilab.github.io/ICC2019maps/asset/img/logo_icc_moji_offset.png', function(error, image) {
+
+if (error) throw error;
+map.addImage('icclogo', image);
+
+map.addLayer({
+"id": "points2",
+"type": "symbol",
+"source": {
+"type": "geojson",
+"data": {
+"type": "FeatureCollection",
+"features": [
+
+  {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.77681, 35.61948
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.77962, 35.61873
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.72968,  35.63764
+          ]
+        }
+      }
+
+]
+}
+},
+"layout": {
+"icon-image": "icclogo",
+"icon-size": 0.12
+}
+});
+
+
+});
+
+
+map.addLayer({
+"id": "points",
+"type": "symbol",
+"source": {
+"type": "geojson",
+"data": {
+"type": "FeatureCollection",
+"features": [{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [139.7761, 35.6208]
+}
+}]
+}
+},
+"layout": {
+"icon-image": "icclogo",
+"icon-size": 0.25
+}
+});
+
+
+}
+
+
+///
+
+
+
+///
+
+);
+
 </script>
+
+
+
 
 </body>
 </html>
