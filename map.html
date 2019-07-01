@@ -78,6 +78,17 @@ map.addLayer({
 "type": "Point",
 "coordinates": [139.77962, 35.61873]
 }
+}, {
+// テレコムセンター  139.77972,  35.61736
+"type": "Feature",
+"properties": {
+"description": "<h1>Telecom Center</h1><img src=./asset/img/TelecomCenter_wikipedia_w200.jpg /><p>→ <a href=\"http://ge0.me/03g2cPqy4N/TelecomCenter\" target=\"_blank\" title=\"Opens in a new window\">Navigation by maps.me</a><br><br><strong>Sessions</strong><br> <strong>Date:</strong> July 15-20<br><strong>Place:</strong> Telecom Center Building,Tokyo Teleport Center.</p></p>",
+"icon": "embassy"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [139.77981, 35.61726]
+}
 }]
 }
 },
@@ -280,6 +291,16 @@ map.addLayer({
             139.72968,  35.63764
           ]
         }
+      },
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.77981, 35.61726
+          ]
+        }
       }
 
 ]
@@ -318,16 +339,73 @@ map.addLayer({
 });
 
 
+
 }
 
+);
 
-///
+/////
+
+map.on('load', function() {
+
+//map.loadImage('https://furuhashilab.github.io/ICC2019maps/asset/img/logo_icc_moji_offset_w200h400.png', function(error, image) {
+map.loadImage('https://furuhashilab.github.io/ICC2019maps/asset/img/rail-15_w50.png', function(error, image) {
+//map.loadImage('https://furuhashilab.github.io/ICC2019maps/asset/img/logo_icc_moji.jpg', function(error, image) {
+//map.loadImage('https://furuhashilab.github.io/ICC2019maps/asset/img/logo_icc_moji_offset.png', function(error, image) {
+
+if (error) throw error;
+map.addImage('stationicon', image);
+
+map.addLayer({
+"id": "stations",
+"type": "symbol",
+"source": {
+"type": "geojson",
+"data": {
+"type": "FeatureCollection",
+"features": [
+
+  {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.7794497013092,  35.61757437483765
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            139.7730714082718,   35.6213987526459
+          ]
+        }
+      }
+
+]
+}
+},
+"layout": {
+"icon-image": "stationicon",
+"icon-size": 0.25
+}
+});
 
 
+});
 
-///
+
+}
 
 );
+
+//////
+
+
 
 </script>
 
