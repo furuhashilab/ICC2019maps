@@ -24,9 +24,15 @@ https://www.google.com/maps/d/u/0/viewer?mid=1siMVXjPr9xrirROnd8n0_GJdqIq0bRKA&l
 
 `<iframe src="https://www.google.com/maps/d/embed?mid=1siMVXjPr9xrirROnd8n0_GJdqIq0bRKA" width="640" height="480"></iframe>`
 
+![mymaps4icc2019tokyo_w600](https://user-images.githubusercontent.com/416977/60844091-4c518500-a213-11e9-8574-8b45a223d9cb.jpg)
+
+
 ## umap/OpenStreetMap
 
 http://u.osmfr.org/m/344695/
 
 
 `<iframe width="100%" height="300px" frameborder="0" allowfullscreen src="https://umap.openstreetmap.fr/ja/map/lunch-map-for-icc-2019-tokyo_344695?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe><p><a href="https://umap.openstreetmap.fr/ja/map/lunch-map-for-icc-2019-tokyo_344695">フルスクリーン表示</a></p>`
+
+![umap4icc2019tokyo_w600](https://user-images.githubusercontent.com/416977/60844092-4cea1b80-a213-11e9-8daa-ef8739e5e417.jpg)
+
