@@ -14,6 +14,8 @@
 * sample: https://furuhashilab.github.io/ICC2019maps/iframe.html
 
 
+![venuemaps_w600](https://user-images.githubusercontent.com/416977/60844483-62ac1080-a214-11e9-81dd-79e45661f01a.jpg)
+
 ---
 
 
